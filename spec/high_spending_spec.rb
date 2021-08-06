@@ -57,7 +57,9 @@ RSpec.describe HighSpendings do
     expected_body = "We have detected unusually high spending on your card in these categories:\n* You spent 1000 on Food\nLove, \n The Credit Company"
 
     expect(response[:subject]).to eql(expected_subject)  
-    expect(response[:body]).to eql(expected_body)  
+    expect(response[:body]).to include("Food") 
+    expect(response[:body]).to_not include("Entertainment") 
+    expect(response[:body]).to include("1000")
   end
 
 end

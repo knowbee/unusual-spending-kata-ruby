@@ -1,6 +1,8 @@
 # frozen_string_literal: true
-
-require "UnusualSpending"
+require 'simplecov'
+# require "UnusualSpending"
+# require "Email"
+SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -9,3 +9,5 @@ gem "rspec", "~> 3.0"
 gem "rubocop", "~> 0.80"
 
 gem 'sendgrid-ruby'
+
+gem 'simplecov', require: false, group: :test

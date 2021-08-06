@@ -1,5 +1,4 @@
 class UnusualSpending
-
   attr_accessor :payments_api, :mailer, :spendings
   def initialize(payments_api, mailer, spendings)
     @payments_api = payments_api
