@@ -1,12 +1,12 @@
 require "mailer/client"
 require "mailer/mailer"
 
-RSpec.describe Mailer::SendgridService do
-  let(:sendgrid_service_api){ Mailer::SendgridService.new }
-  let(:sendgrid) {instance_double(Mailer::SendgridService)}
+RSpec.describe "UnusualSpending::Mailer::SendgridService" do
+  let(:sendgrid_service_api){ UnusualSpending::Mailer::SendgridService.new }
+  let(:sendgrid) {instance_double(UnusualSpending::Mailer::SendgridService)}
   xit "Should fail to send an email with sendgrid service if there is no user_id" do
-    client = Mailer::Client.new(sendgrid_service_api)
-    expect(client.email(nil, "Subject", "Body")).to raise_error(Mailer::EmailDeliveryError)
+    client = UnusualSpending::Mailer::Client.new(sendgrid_service_api)
+    expect(client.email(nil, "Subject", "Body")).to raise_error(UnusualSpending::Mailer::EmailDeliveryError)
   end
 
   it "Should send an email with sendgrid service" do

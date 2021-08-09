@@ -1,8 +1,8 @@
 require "HighSpendings"
 
 
-RSpec.describe HighSpendings do
-    let(:high_spending) {HighSpendings.new}
+RSpec.describe "UnusualSpending::HighSpendings" do
+  let(:high_spending) {UnusualSpending::HighSpendings.new}
 
   it "#has_high_spending returns false if amount is the same for current and previous month" do
     currentMonthPayments = [{:payment_date => Time.local(2021, 7, 27), :amount => 2000, :category => "Food"}]

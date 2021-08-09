@@ -1,6 +1,3 @@
-require_relative "wrappers/sendgrid_wrapper"
-require_relative "client"
-
 module UnusualSpending
   module Mailer
     class EmailDeliveryError < StandardError

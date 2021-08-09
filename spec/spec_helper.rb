@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'simplecov'
-# require "UnusualSpending"
+require "UnusualSpending"
 # require "Email"
 SimpleCov.start
 

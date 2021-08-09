@@ -4,7 +4,7 @@ $LOAD_PATH.push File.expand_path("lib", __dir__)
 require_relative "lib/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "unusual-spending"
+  spec.name          = "unusual_spending"
   spec.version       = UnusualSpending::VERSION::STRING
   spec.authors       = ["Igwaneza Bruce"]
   spec.email         = ["knowbeeinc@gmail.com"]

@@ -54,21 +54,23 @@ module UnusualSpending
       end
       {:current=> current_month_total, :previous=> previous_month_total }
     end
+
+    def get_monthly_totals_by_category(current_month_payments, previous_month_payments)
+      {:current=> get_spending_by_category(current_month_payments), :previous=> get_spending_by_category(previous_month_payments) }
+    end
+  
+    def get_spending_by_category(monthly_payments)
+      category_totals = {}
+      monthly_payments.each do |payment|
+        if category_totals.key?(payment[:category])
+          category_totals[payment[:category]] += payment[:amount]
+        else
+          category_totals[payment[:category]] = payment[:amount]
+        end
+      end
+      category_totals
+    end
 end
 
-  def get_monthly_totals_by_category(current_month_payments, previous_month_payments)
-    {:current=> get_spending_by_category(current_month_payments), :previous=> get_spending_by_category(previous_month_payments) }
-  end
-
-  def get_spending_by_category(monthly_payments)
-    category_totals = {}
-    monthly_payments.each do |payment|
-      if category_totals.key?(payment[:category])
-        category_totals[payment[:category]] += payment[:amount]
-      else
-        category_totals[payment[:category]] = payment[:amount]
-      end
-    end
-    category_totals
-  end
+ 
 end
